@@ -1,0 +1,28 @@
+<h2>Sign up</h2>
+<%@secret_code = SecretCode.new%>
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <%#= devise_error_messages! %>
+  <div><%= f.label :first %><br />
+  <%= f.text_field :first, :autofocus => true %></div>
+  <div><%= f.label :last %><br />
+  <%= f.text_field :last, :autofocus => true %></div>
+
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email, :autofocus => true %></div>
+
+  <div><%= f.label :password %><br />
+  <%= f.password_field :password %></div>
+
+  <div><%= f.label :password_confirmation %><br />
+  <%= f.password_field :password_confirmation %></div>
+	
+  <%= fields_for @secret_code do |sc_form| %>
+
+    <p><%= sc_form.label :code %><br/>
+      <%= sc_form.text_field :code %></p>
+
+<% end %>
+  <div><%= f.submit "Sign up" %></div>
+<% end %>
+
+<%= render "devise/shared/links" %>

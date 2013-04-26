@@ -1,0 +1,23 @@
+<p> Secret Codes: </p>
+
+<%= render :partial =>"form"%>
+
+<table class="table table-striped">
+	<thead>
+		<th> S.No </th>
+		<th> Secret Code</th>
+		<th> User</th>
+		
+	</thead>
+	<% count = 1%>
+	<%@secret_codes.each do |code|%>
+		<tr>
+			<td><%= count %></td>
+			<td>
+				<%=code.code%>
+			</td>
+			<td><%= code.user ? code.user.first : "-"%></td>
+		</tr>
+		<%count +=1 %>
+	<% end %>
+</table>

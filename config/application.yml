@@ -1,0 +1,4 @@
+ADMIN_NAME: admin
+ADMIN_EMAIL: admin@example.com
+ADMIN_PASSWORD: admin123
+ROLES: [admin, user]
